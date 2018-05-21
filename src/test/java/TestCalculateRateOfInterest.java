@@ -6,7 +6,7 @@ import static junit.framework.TestCase.assertEquals;
 
 /* For manual and automation testing I will use the boundary values
 I will put next values for testing: 0.00001, 99.99999, 100, 999.99999, 1000, Double.Max_Value
-and the values for negative testing: 0, -0.00001, -Double.MAX_VALUE, "aa"
+and the values for negative testing: 0, -0.00001, -Double.MAX_VALUE, "aa", null
 
 During manual testing instead of Double.Max_Value I will put and verify big double value.
 
@@ -46,23 +46,28 @@ public class TestCalculateRateOfInterest {
     }
 
     @Test
-    public void testNegativeValue_ZeroValue() {
+    public void test_ZeroValue() {
         assertEquals("The rate of interest should be 0",0, rate.calculateRateOfInterest(new BigDecimal("0")));
     }
 
     @Test
-    public void testNegativeValue_NegativeValue() {
+    public void testNegativeValue_SmallValue() {
         assertEquals("The rate of interest should be 0",0, rate.calculateRateOfInterest(new BigDecimal("-0.00001")));
     }
 
     @Test
-    public void testNegativeValue_DoubleMinVAlue() {
+    public void testNegativeValue_BihValue() {
         assertEquals("The rate of interest should be 0",0, rate.calculateRateOfInterest(new BigDecimal(-Double.MAX_VALUE)));
     }
 
     @Test(expected = NumberFormatException.class)
-    public void testNegative_StringValue() {
+    public void test_StringValue() {
         rate.calculateRateOfInterest(new BigDecimal("aa"));
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void test_NullValue() {
+        rate.calculateRateOfInterest(null);
     }
 
 }
