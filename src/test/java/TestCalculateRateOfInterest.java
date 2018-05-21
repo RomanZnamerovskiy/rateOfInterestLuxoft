@@ -6,7 +6,7 @@ import static junit.framework.TestCase.assertEquals;
 
 /* For manual and automation testing I will use the boundary values
 I will put next values for testing: 0.00001, 99.99999, 100, 999.99999, 1000, Double.Max_Value
-and the values for negative testing: 0, -0.00001, -Double.MAX_VALUE, "ab"
+and the values for negative testing: 0, -0.00001, -Double.MAX_VALUE, "aa"
 
 During manual testing instead of Double.Max_Value I will put and verify big double value.
 
