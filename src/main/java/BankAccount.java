@@ -4,11 +4,14 @@ public class BankAccount {
 
 
     public int calculateRateOfInterest (BigDecimal balance) {
-        if ( (balance.compareTo(BigDecimal.ZERO) == 1) && (balance.compareTo(new BigDecimal("100")) == -1)  ) {
+
+        BigDecimal oneHundred = new BigDecimal("100"), oneThousand = new BigDecimal("1000");
+
+        if ( (balance.compareTo(BigDecimal.ZERO) == 1) && (balance.compareTo(oneHundred) == -1)  ) {
             return 3;
-        } else if ( (balance.compareTo(new BigDecimal("100")) >= 0) && (balance.compareTo(new BigDecimal("1000")) == -1)  ) {
+        } else if ( (balance.compareTo(oneHundred) >= 0) && (balance.compareTo(oneThousand) == -1)  ) {
             return 5;
-        } else if (balance.compareTo(new BigDecimal("1000")) >= 0) {
+        } else if (balance.compareTo(oneThousand) >= 0) {
             return 7;
         } else {
             return 0; // in case if the balance is incorrect ( zero or negative values)
