@@ -1,9 +1,10 @@
 import java.math.BigDecimal;
 
-public class RateOfInterest {
+public class BankAccount {
 
-    int calculateRateOfInterest (BigDecimal balance) {
-        if ( (balance.compareTo(new BigDecimal("0")) == 1) && (balance.compareTo(new BigDecimal("100")) == -1)  ) {
+
+    public int calculateRateOfInterest (BigDecimal balance) {
+        if ( (balance.compareTo(BigDecimal.ZERO) == 1) && (balance.compareTo(new BigDecimal("100")) == -1)  ) {
             return 3;
         } else if ( (balance.compareTo(new BigDecimal("100")) >= 0) && (balance.compareTo(new BigDecimal("1000")) == -1)  ) {
             return 5;

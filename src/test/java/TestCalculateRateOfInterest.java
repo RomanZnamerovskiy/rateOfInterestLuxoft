@@ -13,7 +13,7 @@ During manual testing instead of Double.Max_Value I will put and verify big doub
  */
 public class TestCalculateRateOfInterest {
 
-    RateOfInterest rate = new RateOfInterest();
+    BankAccount rate = new BankAccount();
 
     @Test
     public void testFirstRange_MinValue() {
